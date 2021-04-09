@@ -410,7 +410,7 @@ let slingShot= (logo,percent) => {
            x:width*0.25,
             y:height - groundHeigth -100
         },
-       stiffness:0.1
+       stiffness:0.05
        
    })
 
@@ -462,7 +462,7 @@ let slingShot= (logo,percent) => {
         World.add(engine.world,box)
     })
     Events.on(engine,'afterUpdate', () =>{
-        if(mouseConstraints.mouse.button === -1 && (rock.position.x > width * 0.28)){    
+        if(mouseConstraints.mouse.button === -1 && (rock.position.x > width * 0.27)){    
             rock = Bodies.circle(width*0.25, height - groundHeigth -100, 20,rockOptions);
             World.add(engine.world,rock)
             elastic.bodyB = rock
