@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Visual Politics</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    
+</head>
+<body class="body" id="body">
+    <div id="main">
+        <div class="canvasCont">
+            <canvas id="canvas"></canvas>
+            <div class="progressCont">
+                <p id="progHead"></p>
+                <progress id="prog" value="0" max="100"></progress>
+            </div>
+        </div>
+        
+        <div id="propertiesBox"class="menuClosed">
+            <div id="leftEdge" class="leftEdge">
+                <p><i id="arrow" class="arrow left"></i></p>
+            </div>
+            
+           
+            <div class="propRow">
+                <button id="S" class="btn"></button>
+                <button id="C" class="btn"></button>
+                <button id="KD" class="btn"></button>
+                <button id="L" class="btn"></button>
+            </div>
+            <div class="propRow">
+                <button id="MP" class="btn"></button>
+                <button id="M" class="btn"></button>
+                <button id="SD" class="btn"></button>
+                <button id="V" class="btn"></button>
+            </div>
+            <div id="datePicker" class="dateRow">
+                <select id="yearSelection">
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                </select>
+            </div>
+            <button id="execute" class="btn">
+            </button>
+        </div>
+       
+    </div>
+    <script src="node_modules/matter-js/build/matter.js" type="text/javascript"></script> 
+</body>
+</html>
