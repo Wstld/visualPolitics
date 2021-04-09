@@ -654,5 +654,6 @@ window.addEventListener('orientationchange', (e) => {
 window.addEventListener('resize',(e)=>{
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
+    resetAll()
 })
 
