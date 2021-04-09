@@ -27,6 +27,12 @@ document.body.clientWidth || window.innerWidth;
 const height = document.documentElement.clientHeight|| 
 document.body.clientHeight || window.innerHeight;
 
+//canvas config and ref.
+let canvas = document.getElementById('canvas');
+canvas.width = width;
+canvas.height = height;
+
+
 if (height < 480){
    let body = document.getElementById('body')
    let docEl = document.documentElement
@@ -35,6 +41,9 @@ if (height < 480){
     body.addEventListener('click',(e) => {
         if(!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
             requestFullScreen.call(docEl);
+            canvas.width = width;
+            canvas.height = height;
+            resetAll()
           }
     })
 }
@@ -46,9 +55,9 @@ let propertiesBox = document.getElementById('propertiesBox');
 let arrow = document.getElementById('arrow');
 
 //scaling to viewport.
-let logoscale = width > 480 ? 0.3 : 0.15;
-let squarSize = width > 480 ? 25 : 15;
-let circleSize = width > 480 ? 10 : 5;
+let logoscale = width > 480 && height > 480 ? 0.3 : 0.15;
+let squarSize = width > 480 && height > 480 ? 25 : 15;
+let circleSize = width > 480 && height > 480 ? 10 : 5;
 
 //sidebar Menu
 class MenuEdge{
@@ -175,18 +184,6 @@ if(localStorage["firstVisit"] == "no"){
    
 }
 
-
-
-
-
-
-
-
-
-//canvas config and ref.
-let canvas = document.getElementById('canvas');
-canvas.width = width;
-canvas.height = height;
 
 
 
@@ -651,9 +648,4 @@ window.addEventListener('orientationchange', (e) => {
     window.location.reload()
 })
 
-window.addEventListener('resize',(e)=>{
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-    resetAll()
-})
 
